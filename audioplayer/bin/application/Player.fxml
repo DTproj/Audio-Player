@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlayerCtrl">
+   <children>
+      <MenuBar maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="650.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openM" text="Open" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#playBtn" prefWidth="50.0" text="Play" textAlignment="CENTER" />
+      <Button layoutX="72.0" layoutY="43.0" mnemonicParsing="false" onAction="#pzBtn" prefWidth="50.0" text="Pause" />
+      <Button layoutX="130.0" layoutY="43.0" mnemonicParsing="false" onAction="#stopBtn" prefWidth="50.0" text="Stop" />
+      <Slider fx:id="trackProg" layoutX="204.0" layoutY="40.0" prefHeight="57.0" prefWidth="385.0" />
+      <Button layoutX="47.0" layoutY="77.0" mnemonicParsing="false" onAction="#prevBtn" prefWidth="50.0" text="Prev" />
+      <Button layoutX="105.0" layoutY="77.0" mnemonicParsing="false" onAction="#nxtBtn" prefWidth="50.0" text="Next" />
+      <Slider fx:id="volume" layoutX="14.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="260.0" prefWidth="20.0" />
+      <Label layoutX="15.0" layoutY="369.0" text="Vol" textAlignment="CENTER" />
+      <ListView fx:id="playlist" layoutX="43.0" layoutY="116.0" prefHeight="270.0" prefWidth="280.0" />
+      <VBox layoutX="335.0" layoutY="116.0" prefHeight="270.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Label text="Artist:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label text="Album:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>

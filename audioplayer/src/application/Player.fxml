@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlayerCtrl">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="620.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openM" text="Open" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="47.0" layoutY="57.0" mnemonicParsing="false" onAction="#playBtn" prefWidth="50.0" text="&gt;" textAlignment="CENTER" />
+      <Button layoutX="47.0" layoutY="98.0" mnemonicParsing="false" onAction="#pzBtn" prefWidth="50.0" text="II" />
+      <Button layoutX="47.0" layoutY="141.0" mnemonicParsing="false" onAction="#stopBtn" prefWidth="50.0" text="X" />
+      <Button layoutX="47.0" layoutY="220.0" mnemonicParsing="false" onAction="#prevBtn" prefWidth="50.0" text="&lt;&lt;" />
+      <Button layoutX="47.0" layoutY="261.0" mnemonicParsing="false" onAction="#nxtBtn" prefWidth="50.0" text="&gt;&gt;" />
+      <Slider fx:id="volume" layoutX="14.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="305.0" prefWidth="20.0" />
+      <Label layoutX="15.0" layoutY="369.0" text="Vol" textAlignment="CENTER" />
+      <ListView fx:id="playlist" layoutX="125.0" layoutY="110.0" prefHeight="270.0" prefWidth="375.0" />
+      <Button layoutX="47.0" layoutY="339.0" mnemonicParsing="false" onAction="#openM" prefWidth="50.0" text="Open" />
+      <VBox layoutX="15.0" layoutY="429.0" prefHeight="350.0" prefWidth="280.0" spacing="10.0">
+         <children>
+            <Label text="Artist:" />
+            <Text fx:id="artist" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="URL:" />
+            <Text fx:id="aUrl" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Playcount:" />
+            <Text fx:id="aPc" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Listeners:" />
+            <Text fx:id="aLst" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Search artist:" />
+            <TextField fx:id="sArt" onAction="#searchArt">
+               <VBox.margin>
+                  <Insets left="10.0" right="100.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Search album (req. artist):" />
+            <TextField fx:id="sAlb" onAction="#searchAlb">
+               <VBox.margin>
+                  <Insets left="10.0" right="100.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <Label layoutX="24.0" layoutY="399.0" text="Last.fm info:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+      <VBox layoutX="316.0" layoutY="429.0" prefHeight="350.0" prefWidth="270.0" spacing="10.0">
+         <children>
+            <Label text="Album:" />
+            <Text fx:id="album" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Release:" />
+            <Text fx:id="rDate" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Track:" />
+            <Text fx:id="track" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Duration:" />
+            <Text fx:id="dur" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label text="Search track (req. artist):" />
+            <TextField fx:id="sTr" onAction="#searchTr">
+               <VBox.margin>
+                  <Insets left="10.0" right="100.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <ProgressBar fx:id="trackProg" layoutX="125.0" layoutY="61.0" prefWidth="375.0" progress="0.0" />
+      <CheckBox fx:id="shuff" layoutX="520.0" layoutY="61.0" mnemonicParsing="false" text="Shuffle" />
+      <CheckBox fx:id="rep" layoutX="520.0" layoutY="90.0" mnemonicParsing="false" text="Repeat" />
+   </children>
+</Pane>
